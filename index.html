@@ -13,9 +13,9 @@
 @media(prefers-color-scheme:dark){:root{--bg:#10111A;--sf:#191A27;--ink:#F0F1F7;--mu:#9A9DAE;--ln:#2B2D3C;--pr:#8586FF;--on:#10111A;
 --c-in:#6D6EF2;--c-ex:#F07A7D;--c-fa:#73A7F5;--c-ld:#E3A94B;--c-bu:#B39AF2}}
 *{box-sizing:border-box;margin:0}
-html,body{background:var(--bg);color:var(--ink);font:16px/1.4 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
-body{padding:env(safe-area-inset-top) 16px calc(100px + env(safe-area-inset-bottom))}
-.wrap{max-width:560px;margin:auto}
+html,body{background:var(--bg);color:var(--ink);font:15px/1.45 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;letter-spacing:-.01em}
+body{padding:env(safe-area-inset-top) 20px calc(108px + env(safe-area-inset-bottom))}
+.wrap{max-width:640px;margin:auto}
 button,input,select{font:inherit;color:inherit}
 button{cursor:pointer;border:0;background:none;text-align:left}
 [hidden]{display:none!important}
@@ -26,9 +26,9 @@ button{cursor:pointer;border:0;background:none;text-align:left}
 h1{font-size:26px;font-weight:700;letter-spacing:-.01em;margin-top:4px}
 .al{color:var(--mu);margin:2px 0 14px}
 .al b{color:var(--c-ex)}
-.cash{background:var(--pr);color:var(--on);border-radius:20px;padding:16px 18px;margin-bottom:12px}
+.cash{background:linear-gradient(135deg,#5557db,#7779f1);color:#fff;border-radius:24px;padding:22px 22px 20px;margin-bottom:14px;box-shadow:0 12px 28px rgba(91,92,226,.19)}
 .cash small{opacity:.8;font-size:13px}
-.cash strong{display:block;font-size:40px;font-weight:700;letter-spacing:-.02em;font-variant-numeric:tabular-nums;line-height:1.15}
+.cash strong{display:block;font-size:clamp(36px,9vw,46px);font-weight:750;letter-spacing:-.045em;font-variant-numeric:tabular-nums;line-height:1.15;margin:5px 0}
 .cash span{display:block;font-size:14px;opacity:.9;margin-top:2px}
 .bud{margin-bottom:12px}
 .bl{display:flex;justify-content:space-between;font-size:13px;color:var(--mu);margin-bottom:5px}
@@ -37,15 +37,16 @@ h1{font-size:26px;font-weight:700;letter-spacing:-.01em;margin-top:4px}
 .nav{display:flex;align-items:center;justify-content:space-between;margin:6px 0}
 .nav button{font-size:22px;width:44px;height:44px;border-radius:12px;color:var(--mu);text-align:center}
 .nav b{font-size:15px;font-weight:600}
-.cards{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.card{background:var(--sf);border:1px solid var(--ln);border-left:5px solid var(--cc);border-radius:14px;padding:12px;display:block;width:100%}
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:11px}
+.card{background:var(--sf);border:1px solid var(--ln);border-radius:18px;padding:15px;display:block;width:100%;box-shadow:0 3px 12px rgba(24,29,60,.035);transition:transform .15s,box-shadow .15s}
+.card:active{transform:scale(.98)}
 .card .k{display:block;font-size:13px;color:var(--mu)}
-.card b{display:block;font-size:20px;font-variant-numeric:tabular-nums;color:var(--cc);margin:2px 0}
+.card b{display:block;font-size:21px;font-variant-numeric:tabular-nums;color:var(--cc);margin:5px 0 3px;letter-spacing:-.025em}
 .card .s{display:block;font-size:12.5px;color:var(--mu)}
 .card:last-child:nth-child(odd){grid-column:span 2}
-h2{font-size:15px;font-weight:600;margin:22px 0 8px}
-.list{background:var(--sf);border:1px solid var(--ln);border-radius:14px;overflow:hidden}
-.row{display:flex;gap:10px;align-items:center;padding:12px 14px;border-top:1px solid var(--ln);width:100%;border-left:4px solid var(--cc)}
+h2{font-size:16px;font-weight:700;margin:24px 0 10px;letter-spacing:-.02em}
+.list{background:var(--sf);border:1px solid var(--ln);border-radius:18px;overflow:hidden;box-shadow:0 3px 12px rgba(24,29,60,.035)}
+.row{display:flex;gap:12px;align-items:center;padding:14px 15px;border-top:1px solid var(--ln);width:100%;border-left:3px solid var(--cc)}
 .row:first-child{border-top:0}
 .row .m{flex:1;min-width:0}
 .row .m b{display:block;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
@@ -56,16 +57,20 @@ h2{font-size:15px;font-weight:600;margin:22px 0 8px}
 .chips{display:flex;gap:6px;overflow-x:auto;padding:2px 0 10px}
 .chips button{border:1px solid var(--ln);background:var(--sf);border-radius:20px;padding:6px 12px;font-size:14px;white-space:nowrap}
 .chips button.on{background:var(--pr);color:var(--on);border-color:var(--pr)}
-.fab{position:fixed;right:max(16px,calc(50% - 264px));bottom:calc(20px + env(safe-area-inset-bottom));background:var(--pr);color:var(--on);border-radius:28px;padding:0 22px;height:56px;font-weight:700;box-shadow:0 4px 14px rgba(0,0,0,.25);z-index:3;text-align:center}
-.page{position:fixed;inset:0;background:var(--bg);overflow-y:auto;display:none;z-index:4;padding:env(safe-area-inset-top) 16px calc(40px + env(safe-area-inset-bottom))}
+.fab{position:fixed;right:max(20px,calc(50% - 300px));bottom:calc(20px + env(safe-area-inset-bottom));background:var(--pr);color:var(--on);border-radius:18px;padding:0 24px;height:56px;font-weight:700;box-shadow:0 8px 24px rgba(91,92,226,.32);z-index:3;text-align:center}
+.page{position:fixed;inset:0;background:var(--bg);overflow-y:auto;display:none;z-index:4;padding:env(safe-area-inset-top) 20px calc(40px + env(safe-area-inset-bottom))}
 .page.open{display:block}
 .ph{display:flex;align-items:center;gap:6px;padding:8px 0}
-.ph h1{flex:1;margin:0;font-size:22px}
+.ph h1{flex:1;min-width:0;margin:0;font-size:22px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .ph button{height:44px;border-radius:12px;padding:0 12px;font-weight:600;color:var(--pr)}
 .tiles{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:6px 0 14px}
-.tiles div{background:var(--sf);border:1px solid var(--ln);border-radius:12px;padding:10px 12px}
+.tiles div{background:var(--sf);border:1px solid var(--ln);border-radius:16px;padding:14px}
 .tiles b{display:block;font-size:19px;font-variant-numeric:tabular-nums;color:var(--cc)}
 .k{color:var(--mu);font-size:13px}
+.bizhero{background:linear-gradient(135deg,#302546,#7250a8);color:#fff;border-radius:24px;padding:21px;margin:8px 0 14px;box-shadow:0 12px 28px rgba(77,55,112,.18)}
+.bizhero .k{color:rgba(255,255,255,.72)}.bizhero strong{display:block;font-size:34px;letter-spacing:-.04em;margin:5px 0}.bizhero span{font-size:13px;color:rgba(255,255,255,.78)}
+.nature{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin:0 0 12px}.nature button{border:1px solid var(--ln);background:var(--bg);border-radius:12px;padding:10px 4px;text-align:center;font-size:12px;font-weight:650;color:var(--mu)}.nature button.on{background:var(--pr);color:#fff;border-color:var(--pr)}
+.quick{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin:14px 0}.quick button{background:var(--sf);border:1px solid var(--ln);border-radius:15px;padding:12px 8px;text-align:center;font-size:13px;font-weight:650;color:var(--ink)}.quick span{display:block;font-size:20px;color:var(--cc);margin-bottom:2px}
 .br{display:grid;grid-template-columns:110px 1fr auto;gap:8px;align-items:center;font-size:14px;padding:5px 0}
 .br span:first-child{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .br em{font-style:normal;font-variant-numeric:tabular-nums;color:var(--mu)}
@@ -131,6 +136,7 @@ label.chk{display:flex;gap:10px;align-items:center;margin-top:14px;font-size:15p
   <label for="party" id="pl"></label><input id="party" autocomplete="off">
   <div class="two"><div><label for="date">Date</label><input id="date" type="date"></div><div><label for="method">Via</label><select id="method"></select></div></div>
   <div id="bzw" hidden>
+    <label>Business entry</label><div class="nature" id="nature"><button type="button" data-nature="cost">Operating cost</button><button type="button" data-nature="investment">Investment</button><button type="button" data-nature="revenue">Revenue</button></div>
     <label for="project">Project or client (optional)</label><input id="project" autocomplete="off">
     <label class="chk"><input type="checkbox" id="unpaid"> Not paid yet, remind me</label>
   </div>
@@ -178,6 +184,7 @@ const CATS={
   Family:['Monthly allowance','Tuition and fees','Rent','Emergency','Other'],
   Lend:[],Borrow:[],
   Business:['Hosting and domain','Software and subscriptions','Ads and marketing','Equipment','Freelancer pay','Tax and license','Travel','Supplies','Other']};
+const BIZ_CATS={cost:CATS.Business,investment:['Equipment','Inventory','Business setup','Product development','Property','Other'],revenue:['Product sales','Services','Client payment','Interest and returns','Other']};
 const FL={Income:'Source',Expense:'Where or what for (optional)',Family:'Who sent it',Lend:'Lent to',Borrow:'Borrowed from',Business:'Vendor or client paid'};
 const PL={Income:'Source',Expense:'Where',Family:'From',Lend:'Lent to',Borrow:'Borrowed from',Business:'Vendor or client'};
 const METHODS=['Cash','bKash','Nagad','Rocket','Bank','Card'];
@@ -186,10 +193,10 @@ const SEGS={
   expense:{t:'Spending',types:['Expense'],by:'cat'},
   family:{t:'From family',types:['Family'],by:'party'},
   loans:{t:'Loans',types:['Lend','Borrow'],by:'party',chips:['Open','All','Lent','Borrowed','Settled']},
-  business:{t:'Business',types:['Business'],by:'cat',chips:['Due','All','Paid']}};
+  business:{t:'Business',types:['Business'],by:'cat',chips:['All','Operating costs','Investments','Revenue','Due']}};
 
 let S=get('cache',[]),Q=get('q',[]),M=iso(new Date()).slice(0,7),busy=false;
-let T='Expense',edit=null,cur='',chip='',P='month',detailId='';
+let T='Expense',edit=null,cur='',chip='',P='month',detailId='',BN='cost';
 const stack=[];
 
 function toast(m){const t=$('#toast');t.textContent=m;t.style.display='block';clearTimeout(toast.t);toast.t=setTimeout(()=>t.style.display='none',3800)}
@@ -294,7 +301,9 @@ function dueIn(due){
 }
 function ago(d){const n=Math.round((Date.parse(iso(new Date()))-Date.parse(d))/864e5);return n<=0?'today':n==1?'yesterday':n+' days ago'}
 const live=r=>(r.status=='Due'||r.status=='Open');
-const spend=r=>r.type=='Expense'||(r.type=='Business'&&r.status!='Due');
+const bizKind=r=>r.type!='Business'?'':String(r.cat||'').startsWith('Investment: ')?'investment':String(r.cat||'').startsWith('Revenue: ')?'revenue':'cost';
+const bizLabel=r=>r.type!='Business'?r.cat:String(r.cat||'').replace(/^(Investment|Revenue): /,'');
+const spend=r=>r.type=='Expense'||(r.type=='Business'&&bizKind(r)=='cost'&&r.status!='Due');
 
 function stats(D){
   const inM=r=>r.date.slice(0,7)==M,of=(t,f)=>D.filter(r=>r.type==t&&(!f||f(r)));
@@ -305,12 +314,16 @@ function stats(D){
   const fl=of('Family').sort((a,b)=>a.date<b.date?1:-1)[0];st.famLast=fl?fl.date:'';
   st.owed=of('Lend',live).reduce((x,r)=>x+left(r),0);
   st.owe=of('Borrow',live).reduce((x,r)=>x+left(r),0);
-  st.biz=sm(of('Business',r=>r.status!='Due'&&inM(r)));
-  const dues=of('Business',r=>r.status=='Due');st.dueN=dues.length;st.dueAmt=sm(dues);
+  st.biz=sm(of('Business',r=>bizKind(r)=='cost'&&r.status!='Due'&&inM(r)));
+  st.bizRevenue=sm(of('Business',r=>bizKind(r)=='revenue'&&inM(r)));
+  st.bizInvest=sm(of('Business',r=>bizKind(r)=='investment'&&r.status!='Due'));
+  st.bizInvestM=sm(of('Business',r=>bizKind(r)=='investment'&&r.status!='Due'&&inM(r)));
+  st.bizProfit=sm(of('Business',r=>bizKind(r)=='revenue'&&inM(r)))-st.biz;
+  const dues=of('Business',r=>r.status=='Due'&&bizKind(r)=='cost');st.dueN=dues.length;st.dueAmt=sm(dues);
   st.cash=D.reduce((a,r)=>{
     if(r.type=='Income'||r.type=='Family')return a+r.amt;
     if(r.type=='Expense')return a-r.amt;
-    if(r.type=='Business')return r.status=='Due'?a:a-r.amt;
+    if(r.type=='Business')return r.status=='Due'?a:a+(bizKind(r)=='revenue'?r.amt:-r.amt);
     if(r.type=='Lend')return a-r.amt+(r.settled||0);
     if(r.type=='Borrow')return a+r.amt-(r.settled||0);
     return a},0);
@@ -321,13 +334,13 @@ function stats(D){
 
 function rowH(r){
   const k=COL[r.type],loan=isLoan(r);
-  const title=loan?(r.type=='Lend'?'To ':'From ')+r.party:(r.party||r.cat||NAME[r.type]);
-  let sub=[r.date,!loan&&r.party&&r.cat?r.cat:'',r.method].filter(Boolean).join(', '),cls='';
-  if(r.due&&live(r)){const d=dueIn(r.due);sub=d.t+(loan?', of '+fmt(r.amt):', '+r.cat);cls=d.c}
+  const title=loan?(r.type=='Lend'?'To ':'From ')+r.party:(r.party||bizLabel(r)||NAME[r.type]);
+  let sub=[r.date,!loan&&r.party&&r.cat?bizLabel(r):'',r.method].filter(Boolean).join(', '),cls='';
+  if(r.due&&live(r)){const d=dueIn(r.due);sub=d.t+(loan?', of '+fmt(r.amt):', '+bizLabel(r));cls=d.c}
   else if(loan)sub=(r.status=='Settled'?'Settled, ':'of '+fmt(r.amt)+', ')+sub;
   if(r.pending)sub+=' (not synced)';
   const v=loan&&r.status=='Open'?left(r):r.amt;
-  const sg=(r.type=='Income'||r.type=='Family'||r.type=='Borrow')?'+':'-';
+  const sg=(r.type=='Income'||r.type=='Family'||r.type=='Borrow'||(r.type=='Business'&&bizKind(r)=='revenue'))?'+':'-';
   return `<button class="row t-${k}" data-open="${r.id}"><div class="m"><b>${esc(title)}</b><span class="${cls}">${esc(sub)}</span></div><span class="amt">${sg}${fmt(v)}</span></button>`;
 }
 const listH=(a,e)=>a.length?a.map(rowH).join(''):`<div class="empty">${e}</div>`;
@@ -337,7 +350,7 @@ function renderHome(){
   const D=all(),st=stats(D),today=new Date(),name=get('name','');
   const g=today.getHours()<12?'Good morning':today.getHours()<17?'Good afternoon':'Good evening';
   $('#hi').textContent=g+(name?', '+name:'');
-  const dues=D.filter(r=>r.due&&live(r)).sort((a,b)=>a.due<b.due?-1:1);
+  const dues=D.filter(r=>r.type!='Business'&&r.due&&live(r)).sort((a,b)=>a.due<b.due?-1:1);
   const over=dues.filter(r=>dueIn(r.due).n<0).length,soon=dues.filter(r=>{const n=dueIn(r.due).n;return n>=0&&n<=3}).length;
   $('#al').innerHTML=over||soon?(over?`<b>${over} overdue.</b> `:'')+(soon?soon+' due in the next 3 days.':''):'Nothing due soon.';
   $('#bal').textContent=fmt(st.cash);
@@ -352,10 +365,10 @@ function renderHome(){
    ['expense','ex','Spending',fmt(st.exp),fmt(st.exp/days)+' a day'],
    ['family','fa','From family',fmt(st.fam),st.famLast?'Last one '+ago(st.famLast):'Nothing yet'],
    ['loans','ld','Owed to you',fmt(st.owed),'You owe '+fmt(st.owe)],
-   ['business','bu','Business bills',st.dueN?st.dueN+' due, '+fmt(st.dueAmt):'None due','Paid this month '+fmt(st.biz)]];
+   ['business','bu','Business',fmt(st.bizProfit),'Profit this month · '+fmt(st.bizRevenue)+' revenue']];
   $('#cards').innerHTML=cs.map(c=>`<button class="card t-${c[1]}" data-seg="${c[0]}"><span class="k">${c[2]}</span><b>${c[3]}</b><span class="s">${esc(c[4])}</span></button>`).join('');
   $('#soon').innerHTML=listH(dues.slice(0,6),'No bills or loans with a due date.');
-  $('#recent').innerHTML=listH(D.filter(r=>r.status!='Due').sort((a,b)=>a.date<b.date?1:-1).slice(0,8),'Nothing yet. Tap + Add.');
+  $('#recent').innerHTML=listH(D.filter(r=>r.type!='Business'&&r.status!='Due').sort((a,b)=>a.date<b.date?1:-1).slice(0,8),'Nothing yet. Tap + Add.');
 }
 
 /* ---------- segment pages ---------- */
@@ -366,20 +379,29 @@ function renderPage(){
   const k=COL[sg.types[0]];
   const first=ar.length?ar.map(r=>r.date).sort()[0]:iso(new Date());
   const days=Math.max(1,P=='all'?Math.round((Date.now()-Date.parse(first))/864e5)+1:(M==iso(new Date()).slice(0,7)?new Date().getDate():new Date(+M.slice(0,4),+M.slice(5),0).getDate()));
+  const bizRevenueP=sm(pr.filter(r=>bizKind(r)=='revenue'));
+  const bizCostP=sm(pr.filter(r=>bizKind(r)=='cost'&&r.status!='Due'));
+  const bizInvestP=sm(pr.filter(r=>bizKind(r)=='investment'&&r.status!='Due'));
   const tl={income:[['Total',fmt(sm(pr))],['Entries',pr.length]],
     expense:[['Total',fmt(sm(pr))],['Per day',fmt(sm(pr)/days)]],
     family:[['Received',fmt(sm(pr))],['Last one',st.famLast?ago(st.famLast):'-']],
     loans:[['Owed to you',fmt(st.owed)],['You owe',fmt(st.owe)]],
-    business:[['Paid',fmt(sm(pr.filter(r=>r.status!='Due')))],['Bills due',fmt(st.dueAmt)]]}[cur];
-  const g={};pr.filter(r=>r.status!='Due').forEach(r=>{const key=r[sg.by]||'Other';g[key]=(g[key]||0)+r.amt});
+    business:[['Revenue',fmt(bizRevenueP)],['Operating costs',fmt(bizCostP)],['Capital invested',fmt(bizInvestP)],['Profit',fmt(bizRevenueP-bizCostP)],['Unpaid bills',fmt(st.dueAmt)],['Capital invested all time',fmt(st.bizInvest)]]}[cur];
+  const g={};pr.filter(r=>r.status!='Due').forEach(r=>{const key=r.type=='Business'?bizLabel(r):(r[sg.by]||'Other');g[key]=(g[key]||0)+r.amt});
   const gs=Object.entries(g).sort((a,b)=>b[1]-a[1]).slice(0,6),mx=gs.length?gs[0][1]:1;
+  const projects={};if(cur=='business')pr.filter(r=>r.project&&r.status!='Due').forEach(r=>{const p=projects[r.project]||(projects[r.project]={revenue:0,cost:0,invest:0});p[bizKind(r)=='revenue'?'revenue':bizKind(r)=='investment'?'invest':'cost']+=r.amt});
+  const projectRows=Object.entries(projects).map(([name,p])=>({name,...p,profit:p.revenue-p.cost})).sort((a,b)=>b.profit-a.profit).slice(0,5);
+  const businessDues=cur=='business'?ar.filter(r=>r.status=='Due').sort((a,b)=>(a.due||'9')<(b.due||'9')?-1:1).slice(0,5):[];
   let rs=ar.filter(r=>chip=='Open'||chip=='Due'?true:inP(r));
-  rs=rs.filter(r=>({Open:r.status=='Open',Due:r.status=='Due',Paid:r.status=='Paid',Settled:r.status=='Settled',Lent:r.type=='Lend',Borrowed:r.type=='Borrow'}[chip]??true));
+  rs=rs.filter(r=>cur=='business'?({'Operating costs':bizKind(r)=='cost','Investments':bizKind(r)=='investment','Revenue':bizKind(r)=='revenue','Due':r.status=='Due'}[chip]??true):({Open:r.status=='Open',Due:r.status=='Due',Paid:r.status=='Paid',Settled:r.status=='Settled',Lent:r.type=='Lend',Borrowed:r.type=='Borrow'}[chip]??true));
   rs.sort((a,b)=>chip=='Due'||chip=='Open'?((a.due||'9')<(b.due||'9')?-1:1):(a.date<b.date?1:-1));
-  $('#pbody').innerHTML=`<div class="ph t-${k}"><button data-back>&larr; Back</button><h1>${sg.t}</h1><button data-addseg>+ Add</button></div>
-  <div class="chips t-${k}"><button data-p="month" class="${P=='month'?'on':''}">${new Date(M+'-15').toLocaleString('en',{month:'long'})}</button><button data-p="all" class="${P=='all'?'on':''}">All time</button></div>
+  $('#pbody').innerHTML=`<div class="ph t-${k}"><button data-back>&larr; Back</button><h1>${cur=='business'?'Business dashboard':sg.t}</h1><button data-addseg>+ Add</button></div>
+  ${cur=='business'?`<div class="bizhero"><span class="k">Net business profit · ${P=='all'?'All time':new Date(M+'-15').toLocaleString('en',{month:'long',year:'numeric'})}</span><strong>${fmt(bizRevenueP-bizCostP)}</strong><span>Revenue ${fmt(bizRevenueP)} · Costs ${fmt(bizCostP)}</span></div><div class="quick"><button class="t-in" data-addtype="revenue"><span>＋</span>Record revenue</button><button class="t-ex" data-addtype="cost"><span>−</span>Add cost</button><button class="t-bu" data-addtype="investment"><span>↗</span>Invest money</button></div>`:''}
+  <div class="chips t-${k}"><button data-shift="-1" aria-label="Previous month">‹</button><button data-p="month" class="${P=='month'?'on':''}">${new Date(M+'-15').toLocaleString('en',{month:'long',year:'numeric'})}</button><button data-shift="1" aria-label="Next month">›</button><button data-p="all" class="${P=='all'?'on':''}">All time</button></div>
   <div class="tiles t-${k}">${tl.map(x=>`<div><span class="k">${x[0]}</span><b>${x[1]}</b></div>`).join('')}</div>
   ${gs.length?`<h2 style="margin-top:4px">${sg.by=='party'?'By person':'By category'}</h2><div class="t-${k}">${gs.map(x=>`<div class="br"><span>${esc(x[0])}</span><div class="pb"><i style="width:${x[1]/mx*100}%"></i></div><em>${fmt(x[1])}</em></div>`).join('')}</div>`:''}
+  ${projectRows.length?`<h2>Project performance</h2><div class="list">${projectRows.map(p=>`<div class="row t-bu"><div class="m"><b>${esc(p.name)}</b><span>Revenue ${fmt(p.revenue)} · Costs ${fmt(p.cost)}${p.invest?' · Invested '+fmt(p.invest):''}</span></div><span class="amt" style="color:${p.profit<0?'var(--c-ex)':'var(--c-in)'}">${fmt(p.profit)}</span></div>`).join('')}</div>`:''}
+  ${businessDues.length?`<h2>Unpaid business bills</h2><div class="list">${listH(businessDues,'No unpaid bills.')}</div>`:''}
   ${sg.chips?`<h2>Entries</h2><div class="chips">${sg.chips.map(c=>`<button data-c="${c}" class="${chip==c?'on':''}">${c}</button>`).join('')}</div>`:'<h2>Entries</h2>'}
   <div class="list">${listH(rs,'Nothing here yet.')}</div>`;
 }
@@ -390,8 +412,8 @@ function showDetail(id){
   if(!r){if($('#dsh').classList.contains('open'))back();return}
   const loan=isLoan(r),k=COL[r.type];
   const d=r.due&&live(r)?dueIn(r.due):null;
-  const rows=[['Type',NAME[r.type]],['Date',r.date],!loan&&r.cat?['Category',r.cat]:0,r.party?[PL[r.type],r.party]:0,r.method?['Via',r.method]:0,
-    r.project?['Project',r.project]:0,r.type=='Business'?['Status',r.status=='Due'?'Not paid yet':'Paid']:0,
+  const rows=[['Type',r.type=='Business'?({cost:'Operating cost',investment:'Business investment',revenue:'Business revenue'}[bizKind(r)]):NAME[r.type]],['Date',r.date],!loan&&r.cat?['Category',bizLabel(r)]:0,r.party?[PL[r.type],r.party]:0,r.method?['Via',r.method]:0,
+    r.project?['Project',r.project]:0,r.type=='Business'?['Status',r.status=='Due'?'Not paid yet':bizKind(r)=='revenue'?'Received':'Paid']:0,
     d?[loan?'Due back':'Pay by',r.due+' ('+d.t.toLowerCase()+')']:0,r.repeat?['Repeats',r.repeat]:0,
     d?['Reminder',(r.remind>0?r.remind+(r.remind==1?' day':' days')+' before, and ':'')+'on the day']:0,r.note?['Note',r.note]:0].filter(Boolean);
   let loanH='';
@@ -416,23 +438,27 @@ function catOptions(t){
   return[...new Set([...CATS[t],...seen])];
 }
 function buildForm(){
-  const loan=T=='Lend'||T=='Borrow',bz=T=='Business',unpaid=bz&&$('#unpaid').checked;
+  const loan=T=='Lend'||T=='Borrow',bz=T=='Business',unpaid=bz&&BN!='revenue'&&$('#unpaid').checked;
   $('#seg').hidden=!!edit;
   $('#seg').innerHTML=Object.keys(NAME).map(t=>`<button data-t="${t}" class="t-${COL[t]} ${T==t?'on':''}">${NAME[t]}</button>`).join('');
   $('#ft').textContent=edit?'Edit '+NAME[T].toLowerCase():'';
   $('#catw').hidden=loan;
-  const cv=$('#cat').value,opts=catOptions(T);
+  const cv=$('#cat').value,opts=bz?[...new Set([...BIZ_CATS[BN],...all().filter(r=>r.type=='Business'&&bizKind(r)==BN).map(bizLabel)])]:catOptions(T);
   $('#cat').innerHTML=opts.map(c=>`<option>${esc(c)}</option>`).join('')+'<option value="__new">New category...</option>';
   if(opts.includes(cv))$('#cat').value=cv;
   $('#catx').hidden=$('#cat').value!='__new';
-  $('#pl').textContent=FL[T];
+  $('#nature').querySelectorAll('button').forEach(b=>b.classList.toggle('on',b.dataset.nature==BN));
+  $('#nature').hidden=!bz;
+  $('#pl').textContent=bz?(BN=='revenue'?'Client or payer':BN=='investment'?'Seller or asset':'Vendor or payee'):FL[T];
   $('#bzw').hidden=!bz;
+  $('#unpaid').closest('label').hidden=BN=='revenue';
   $('#duew').hidden=!(loan||unpaid);
-  $('#repw').hidden=!bz;
+  $('#repw').hidden=!bz||BN!='cost';
   $('#dl').textContent=bz?'Pay by':T=='Lend'?'Expected back by':'Repay by';
 }
 function openForm(type,e){
   edit=e||null;T=e?e.type:(type||'Expense');
+  BN=e&&e.type=='Business'?bizKind(e):'cost';
   $('#cat').innerHTML='';
   $('#amt').value=e?e.amt:'';$('#party').value=e?e.party||'':'';$('#note').value=e?e.note||'':'';
   $('#date').value=e?e.date:iso(new Date());
@@ -443,11 +469,12 @@ function openForm(type,e){
   $('#dueD').value=e?(e.due||''):(T=='Business'?iso(d):'');
   $('#remind').value=e&&e.remind!=null?e.remind:1;$('#repeat').value=e?e.repeat||'':'';
   buildForm();
-  if(e&&!isLoan(e))$('#cat').value=e.cat||$('#cat').value;
+  if(e&&!isLoan(e))$('#cat').value=e.type=='Business'?bizLabel(e):e.cat||$('#cat').value;
   $('#catx').hidden=$('#cat').value!='__new';
   layer($('#shade'));$('#amt').focus();
 }
 $('#seg').onclick=e=>{const b=e.target.closest('button');if(b){T=b.dataset.t;if(T=='Business'&&!$('#dueD').value){const d=new Date();d.setDate(d.getDate()+7);$('#dueD').value=iso(d)}buildForm()}};
+$('#nature').onclick=e=>{const b=e.target.closest('[data-nature]');if(!b)return;BN=b.dataset.nature;$('#unpaid').checked=BN=='cost';buildForm()};
 $('#unpaid').onchange=buildForm;
 $('#cat').onchange=()=>{$('#catx').hidden=$('#cat').value!='__new';if(!$('#catx').hidden)$('#catx').focus()};
 $('#cancel').onclick=back;
@@ -458,10 +485,11 @@ $('#save').onclick=()=>{
   if(!(amt>0))return toast('Enter an amount above 0.');
   const loan=T=='Lend'||T=='Borrow',bz=T=='Business',party=$('#party').value.trim();
   if((loan||T=='Family')&&!party)return toast('Enter '+FL[T].toLowerCase()+'.');
-  const unpaid=bz&&$('#unpaid').checked,due=$('#dueD').value;
+  const unpaid=bz&&BN!='revenue'&&$('#unpaid').checked,due=$('#dueD').value;
   if(unpaid&&!due)return toast('Pick a pay-by date.');
   let cat=loan?'':$('#cat').value;
   if(cat=='__new'){cat=$('#catx').value.trim();if(!cat)return toast('Type the new category name.')}
+  if(bz&&BN!='cost')cat=(BN=='investment'?'Investment: ':'Revenue: ')+cat;
   const e={id:edit?edit.id:rid(),type:T,amt,cat,party,date:$('#date').value||iso(new Date()),method:$('#method').value,note:$('#note').value.trim(),
     project:bz?$('#project').value.trim():'',status:bz?(unpaid?'Due':'Paid'):'',due:(loan||unpaid)?due:'',repeat:unpaid?$('#repeat').value:'',remind:+$('#remind').value};
   if(edit){
@@ -503,7 +531,9 @@ document.addEventListener('click',e=>{
   if(d.open)showDetail(d.open);
   if('back' in d)back();
   if('addseg' in d)openForm(SEGS[cur].types[0]);
+  if(d.addtype){openForm('Business');BN=d.addtype;$('#unpaid').checked=BN=='cost';buildForm()}
   if(d.p){P=d.p;renderPage()}
+  if(d.shift)shift(+d.shift);
   if(d.c){chip=d.c;renderPage()}
   if(d.edit){const r=all().find(x=>x.id==d.edit);if(r)openForm(r.type,r)}
   if(d.done)act('markDone',d.done);
